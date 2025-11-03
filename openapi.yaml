@@ -1,0 +1,32 @@
+openapi: 3.0.1
+info:
+  title: Bank Money Transfer DaaS API
+  version: 1.0.0
+paths:
+  /transfer/initiate:
+    post:
+      summary: Initiate a money transfer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromAccount: { type: string }
+                toAccount: { type: string }
+                amount: { type: number }
+      responses:
+        "200":
+          description: Transfer initiated successfully
+  /transfer/status/{id}:
+    get:
+      summary: Check transfer status
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Status retrieved

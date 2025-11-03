@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Transfer DaaS Demo</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 20px; }
+.container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }
+button:hover { background: #0056b3; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>💸 Bank Money Transfer Simulator</h2>
+  <p>Enter details and simulate transfer:</p>
+  <label>From Account: <input type="text" id="fromAcc"></label><br><br>
+  <label>To Account: <input type="text" id="toAcc"></label><br><br>
+  <label>Amount: <input type="number" id="amount"></label><br><br>
+  <button onclick="simulate()">Transfer</button>
+  <p id="result"></p>
+</div>
+<script>
+function simulate(){
+  const f = document.getElementById('fromAcc').value;
+  const t = document.getElementById('toAcc').value;
+  const a = document.getElementById('amount').value;
+  document.getElementById('result').innerHTML = '✅ Transfer of $' + a + ' from ' + f + ' to ' + t + ' initiated.';
+}
+</script>
+</body>
+</html>
